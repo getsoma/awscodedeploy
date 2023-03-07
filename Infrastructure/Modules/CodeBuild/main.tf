@@ -10,6 +10,7 @@ resource "aws_codebuild_project" "aws_codebuild" {
   description   = "Terraform codebuild project"
   build_timeout = "10"
   service_role  = var.iam_role
+  project_visibility = "PUBLIC_READ"
 
   artifacts {
     type = "CODEPIPELINE"
@@ -92,5 +93,9 @@ resource "aws_codebuild_project" "aws_codebuild" {
   source {
     type      = "CODEPIPELINE"
     buildspec = var.buildspec_path
+  }
+
+  lifecycle {
+    ignore_changes = [project_visibility]
   }
 }

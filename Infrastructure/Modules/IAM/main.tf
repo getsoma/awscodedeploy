@@ -147,7 +147,7 @@ resource "aws_iam_role_policy_attachment" "ecs_attachment" {
 
 resource "aws_iam_role_policy_attachment" "attachment" {
   count      = length(aws_iam_role.ecs_task_excecution_role) > 0 ? 1 : 0
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
+  policy_arn = "arn:aws-us-gov:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
   role       = aws_iam_role.ecs_task_excecution_role[0].name
 
   lifecycle {
@@ -167,7 +167,7 @@ resource "aws_iam_role_policy_attachment" "attachment2" {
 
 resource "aws_iam_role_policy_attachment" "codedeploy_attachment" {
   count      = var.create_codedeploy_role == true ? 1 : 0
-  policy_arn = "arn:aws:iam::aws:policy/AWSCodeDeployRoleForECS"
+  policy_arn = "arn:aws-us-gov:iam::aws:policy/AWSCodeDeployDeployerAccess"
   role       = aws_iam_role.codedeploy_role[0].name
 }
 
