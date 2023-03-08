@@ -167,7 +167,7 @@ resource "aws_iam_role_policy_attachment" "attachment2" {
 
 resource "aws_iam_role_policy_attachment" "codedeploy_attachment" {
   count      = var.create_codedeploy_role == true ? 1 : 0
-  policy_arn = "arn:aws-us-gov:iam::343663719667:role/ECS-task-excecution-Role"
+  policy_arn = "arn:aws-us-gov:iam::343663719667:policy/AdminFullAccess"
   role       = aws_iam_role.codedeploy_role[0].name
 }
 
