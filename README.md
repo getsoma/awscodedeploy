@@ -1,4 +1,4 @@
-# Amazon ECS Demo with fullstack app / DevOps practices / Terraform sample
+# Amazon ECS Demo with fullstack app / DevOps practices / Terraform sample.
 
 ## Table of content
 
