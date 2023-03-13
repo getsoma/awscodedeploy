@@ -1,5 +1,5 @@
 {
-  "executionRoleArn": "arn:aws-us-gov:iam::343663719667:role/ECS-task-excecution-Role",
+  "executionRoleArn": "arn:aws:iam::<AWS_ACCOUNT_ID>:role/<ECS_ROLE>",
   "containerDefinitions": [
     {
       "name": "<CONTAINER_NAME>",
