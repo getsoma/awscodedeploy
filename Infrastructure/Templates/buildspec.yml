@@ -15,7 +15,7 @@ phases:
           sed -i "s|<SERVER_ALB_URL>|$SERVER_ALB_URL|g" ./Code/client/src/services/RestServices.js
         else
           echo "Server build, adding ECS Task Role to the task definition file"
-          sed -i "3i\"taskRoleArn\": \"arn:aws:iam::<AWS_ACCOUNT_ID>:role/<ECS_TASK_ROLE>\"," ./Infrastructure/Templates/taskdef.json
+          sed -i "3i\"taskRoleArn\": \"arn:aws-us-gov:iam::343663719667:role/ECS-task-excecution-Role\"," ./Infrastructure/Templates/taskdef.json
           echo "Replacing table name in the server function"
           sed -i "s|DYNAMODB_TABLE|$DYNAMODB_TABLE|g" ./Code/server/src/app.js
           echo "Adding Swagger host"
